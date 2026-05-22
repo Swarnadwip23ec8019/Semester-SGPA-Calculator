@@ -1,0 +1,163 @@
+/* style.css */
+:root {
+    --bg-color: #121214;       /* Deep charcoal background */
+    --card-bg: #1e1e24;        /* Slightly lighter box background */
+    --text-color: #f0f0f5;     /* Soft white text */
+    --accent-color: #7c4dff;   /* Vibrant purple accent */
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.calculator-container {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+    width: 100%;
+    max-width: 660px;
+    text-align : center;
+}
+
+/* Container for the text and buttons */
+.semester-selection {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+/* Forces the instructions to take full width, pushing buttons to the next line 📦 */
+.semester-selection p {
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.05rem;
+}
+
+/* Styled buttons with identical dimensions 🔘 */
+.semester-selection button {
+    background-color: #2a2a35;
+    color: var(--text-color);
+    border: 2px solid transparent;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    
+    /* Equal dimensions configuration */
+    min-width: 85px; 
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.semester-selection button:hover {
+    background-color: var(--accent-color);
+    border-color: #a380ff;
+}
+
+/* Form Styles for dynamic inputs */
+.form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.sem-row, .target-row {
+    background-color: #25252d;
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+}
+
+.sem-row h3, .target-row h3 {
+    width: 100%;
+    margin: 0 0 5px 0;
+    font-size: 1rem;
+    color: #b3b3cc;
+}
+
+input[type="number"] {
+    background-color: #121214;
+    border: 1px solid #3e3e4a;
+    color: var(--text-color);
+    padding: 10px;
+    border-radius: 6px;
+    flex: 1;
+    min-width: 80px;
+}
+
+input[type="number"]:focus {
+    border-color: var(--accent-color);
+    outline: none;
+}
+
+.calc-button {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.calc-button:hover {
+    background-color: #6533ff;
+}
+
+.result-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.result-container span {
+    color: #00e676; /* Vibrant green for the final score */
+}
+
+.error {
+    color: #ff5252;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 600px) {
+    .calculator-container {
+        padding: 20px; /* Reduce padding to save screen space */
+        margin: 15px;
+    }
+
+    .semester-selection {
+        justify-content: flex-start; 
+    }
+
+    .semester-selection button {
+        flex: 1 1 calc(33.33% - 10px); /* Fit 3 buttons per row neatly */
+        min-width: 75px;
+    }
+
+    /* Change layouts from row to column for mobile vertical space */
+    .sem-row, .target-row {
+        flex-direction: column; 
+        align-items: stretch;
+        gap: 8px;
+    }
+
+    input[type="number"] {
+        width: 100%; /* Inputs expand to fill the container width */
+    }
+}
