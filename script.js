@@ -69,6 +69,6 @@ function calculateSGPA(targetSemester) {
     if (isNaN(requiredSGPA) || requiredSGPA < 0 || requiredSGPA > 10) {
         resultDisplay.innerHTML = `<p class="error">Please enter valid numbers. Calculated SGPA (${requiredSGPA.toFixed(2)}) is out of range.</p>`;
     } else {
-        resultDisplay.innerHTML = `<h2>Required SGPA for Sem ${targetSemester}: <span>${requiredSGPA.toFixed(2)}</span></h2>`;
+        resultDisplay.innerHTML = `<h2>Your SGPA for Sem ${targetSemester}: <span>${requiredSGPA.toFixed(2)}</span></h2>`;
     }
 }
