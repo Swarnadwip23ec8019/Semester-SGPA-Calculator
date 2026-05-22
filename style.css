@@ -1,9 +1,9 @@
 /* style.css */
 :root {
-    --bg-color: #121214;       /* Deep charcoal background */
-    --card-bg: #1e1e24;        /* Slightly lighter box background */
-    --text-color: #f0f0f5;     /* Soft white text */
-    --accent-color: #7c4dff;   /* Vibrant purple accent */
+    --bg-color: #121214;
+    --card-bg: #1e1e24;
+    --text-color: #f0f0f5;
+    --accent-color: #7c4dff;
 }
 
 body {
@@ -27,7 +27,6 @@ body {
     text-align : center;
 }
 
-/* Container for the text and buttons */
 .semester-selection {
     display: flex;
     flex-wrap: wrap;
@@ -35,7 +34,6 @@ body {
     margin-bottom: 25px;
 }
 
-/* Forces the instructions to take full width, pushing buttons to the next line 📦 */
 .semester-selection p {
     width: 100%;
     margin-top: 0;
@@ -43,7 +41,6 @@ body {
     font-size: 1.05rem;
 }
 
-/* Styled buttons with identical dimensions 🔘 */
 .semester-selection button {
     background-color: #2a2a35;
     color: var(--text-color);
@@ -53,7 +50,6 @@ body {
     font-size: 0.95rem;
     transition: background-color 0.3s ease, border-color 0.3s ease;
     
-    /* Equal dimensions configuration */
     min-width: 85px; 
     height: 45px;
     display: flex;
@@ -66,7 +62,6 @@ body {
     border-color: #a380ff;
 }
 
-/* Form Styles for dynamic inputs */
 .form-container {
     display: flex;
     flex-direction: column;
@@ -127,17 +122,16 @@ input[type="number"]:focus {
 }
 
 .result-container span {
-    color: #00e676; /* Vibrant green for the final score */
+    color: #00e676;
 }
 
 .error {
     color: #ff5252;
 }
 
-/* Mobile responsive adjustments */
 @media (max-width: 600px) {
     .calculator-container {
-        padding: 20px; /* Reduce padding to save screen space */
+        padding: 20px;
         margin: 15px;
     }
 
@@ -146,11 +140,10 @@ input[type="number"]:focus {
     }
 
     .semester-selection button {
-        flex: 1 1 calc(33.33% - 10px); /* Fit 3 buttons per row neatly */
+        flex: 1 1 calc(33.33% - 10px);
         min-width: 75px;
     }
 
-    /* Change layouts from row to column for mobile vertical space */
     .sem-row, .target-row {
         flex-direction: column; 
         align-items: stretch;
@@ -158,6 +151,6 @@ input[type="number"]:focus {
     }
 
     input[type="number"] {
-        width: 100%; /* Inputs expand to fill the container width */
+        width: 100%;
     }
 }
